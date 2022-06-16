@@ -1,65 +1,72 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
 
-    <title>Tech Blob</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
 
-    <style>
-      .hidden: {display: none}, .visible: {display: block}
-    </style>
-  </head>
-  <body style="position:relative" style="min-height:100%">
+  <title>Blobby-Tech</title>
 
-    <header>
-      <nav class="panel">
-        <p class="panel-heading has-text-centered is-size-3">
-          Tech Blob
-        </p>
-      </nav>
-    </header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-        </a>
+  <style>
+    .hidden: {
+      display: none
+    }
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary" href="/signup">
-                <strong>Sign up</strong>
-              </a>
-              {{#if loggedIn}}
-                <a id="logout" class="button is-light" href="/login">
-                  <strong>Log out</strong>
-                </a>
-                <a id="dashboard" class="button is-light" href="/dashboard">
-                  <strong>Dashboard</strong>
-                </a>
-              {{else}}
-                <a class="button is-light" href="/login">
-                  <strong>Log in</strong>
-                </a>
+    ,
+    .visible: {
+      display: block
+    }
+  </style>
+</head>
 
-              {{/if}}
-            </div>
+<body style="position:relative" style="min-height:100%">
+
+  <header>
+    <nav class="panel">
+      <p class="panel-heading has-text-centered is-size-3">
+        Blobby-Tech
+      </p>
+    </nav>
+  </header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+      </a>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="/signup">
+              <strong>Sign up</strong>
+            </a>
+            {{#if loggedIn}}
+            <a id="logout" class="button is-light" href="/login">
+              <strong>Log out</strong>
+            </a>
+            <a id="dashboard" class="button is-light" href="/dashboard">
+              <strong>Dashboard</strong>
+            </a>
+            {{else}}
+            <a class="button is-light" href="/login">
+              <strong>Log in</strong>
+            </a>
+
+            {{/if}}
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <section class="section">
-      {{{body}}}
-    </section>
+  <section class="section">
+    {{{body}}}
+  </section>
 
 
-    {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-    {{/if}}
-  </body>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
 </html>

@@ -1,46 +1,42 @@
 {{> post-info post}}
 
 {{#if loggedIn}}
-  <div class="control mb-5">
-    <button type="submit" class="mr-4 button is-danger">Update Post</button>
-    <button type="button" id="delete" class="button is-danger">Delete Post</button>
+<div class="control mb-5">
+  <button type="submit" class="mr-4 button is-danger">Update Post</button>
+  <button type="button" id="delete" class="button is-danger">Delete Post</button>
+</div>
+
+<form class="comment-form">
+
+  <div class="field">
+    <label class="label">Comment</label>
+    <div class="control">
+      <textarea name="comment-body" class="textarea" placeholder="Textarea"></textarea>
+    </div>
   </div>
 
-  <form class="comment-form">
-
-    <div class="field">
-      <label class="label">Comment</label>
-      <div class="control">
-        <textarea
-          name="comment-body"
-          class="textarea"
-          placeholder="Textarea"
-        ></textarea>
-      </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button type="submit" class="button is-link">Add Comment</button>
     </div>
+  </div>
 
-    <div class="field is-grouped">
-      <div class="control">
-        <button type="submit" class="button is-link">Add Comment</button>
-      </div>
-    </div>
-
-  </form>
+</form>
 {{/if}}
 
 <div class="comments">
   {{#each post.comments}}
-    <article class="message is-warning mb-3">
-      <div class="message-body">
-        {{comment_text}}
-        <p class="is-italic has-text-right">
-          by
-          <strong>{{user.username}}</strong>
-          on
-          {{format_date created_at}}
-        </p>
-      </div>
-    </article>
+  <article class="message is-warning mb-3">
+    <div class="message-body">
+      {{comment_text}}
+      <p class="is-italic has-text-right">
+        by
+        <strong>{{user.username}}</strong>
+        on
+        {{format_date created_at}}
+      </p>
+    </div>
+  </article>
   {{/each}}
 </div>
 

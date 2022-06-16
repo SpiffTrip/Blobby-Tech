@@ -1,47 +1,47 @@
 <section>
   <h2 class="title is-2 mb-6">Create New Post</h2>
-<form class="add-post-form">
+  <form class="add-post-form">
 
-  <div class="field">
-    <label class="label">Title</label>
-    <div class="control has-icons-right">
-      <input class="input is-warning" type="text" name="post-title" placeholder="Text input"/>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control has-icons-right">
+        <input class="input is-warning" type="text" name="post-title" placeholder="Text input" />
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <label class="label">Post Text</label>
+    <div class="field">
+      <label class="label">Post Text</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Textarea" name="text-area"></textarea>
+      </div>
+    </div>
+
     <div class="control">
-      <textarea class="textarea" placeholder="Textarea" name="text-area"></textarea>
+      <button type="submit" class="button is-danger">Create</button>
     </div>
-  </div>
-
-  <div class="control">
-    <button type="submit" class="button is-danger">Create</button>
-  </div>
 
 
-</form>
+  </form>
 
 </section>
 
-  <section>
-    <h2 class="title is-3 mt-6">Your Posts</h2>
+<section>
+  <h2 class="title is-3 mt-6">Your Posts</h2>
 
-{{#if posts.length}}
-    <ul>
-        {{#each posts as |post|}}
-        <li>
-            <a class="m-0" href="/dashboard/edit/{{post.id}}">Edit\Delete post</a>
-            {{> post-info post}}
-        </li>
-        {{/each}}
-    </ul>
-{{/if}}
-  </section>
+  {{#if posts.length}}
+  <ul>
+    {{#each posts as |post|}}
+    <li>
+      <a class="m-0" href="/dashboard/edit/{{post.id}}">Edit\Delete post</a>
+      {{> post-info post}}
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</section>
 
 
 <script src="javascript/add-post.js"></script>
